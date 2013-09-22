@@ -1,6 +1,6 @@
 {
     "name": "Meteo",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "author": "Julien Syx",
     "description": [
         {"lang": "fr", "description": "Ce plugin permet de donner la météo"},
