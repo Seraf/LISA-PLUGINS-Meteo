@@ -15,11 +15,8 @@ msgstr ""
 msgid "problem contacting server"
 msgstr "Il y a eu un problème lors de la connexion au serveur de météo."
 
-msgid "temp_celsius"
-msgstr "Il fait %s degrés celsius"
-
-msgid "temp_fahrenheit"
-msgstr "Il fait %s degrés fahrenheit"
+msgid "temperature"
+msgstr "Il fait %i degrés"
 
 msgid "weather in city"
 msgstr "Voici le temps à %s"
@@ -28,7 +25,7 @@ msgid "climat"
 msgstr "%s"
 
 msgid "humidity"
-msgstr "Le taux d'humidité est de %s"
+msgstr "Le taux d'humidité est de %d%%"
 
 msgid "wind speed"
-msgstr "La vitesse du vent est de %s"
+msgstr "La vitesse du vent est de %ikm heure"

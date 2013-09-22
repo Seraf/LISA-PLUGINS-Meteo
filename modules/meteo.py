@@ -20,11 +20,15 @@ class Meteo:
         self.configuration = self.mongo.lisa.plugins.find_one({"name": "Meteo"})
 
     def weatherAPI(self, city):
+        if self.configuration['configuration']['temperature'] == "celsius":
+            units = "metric"
+        else:
+            units = "imperial"
         r = requests.get('http://api.openweathermap.org/data/2.5/weather?', params={
             'lang': self.configuration_lisa['lang'],
+            'units': units,
             'q': ','.join([city,self.configuration_lisa['lang']]),
         })
-        print r.url
         if r.ok:
             return r.json()
         else:
@@ -36,21 +40,17 @@ class Meteo:
         else:
             city = self.configuration['configuration']['city']
         weather = self.weatherAPI(city)
+        if self.configuration['configuration']['temperature'] == "celsius":
+            windspeed = round(weather['wind']['speed'] * 3.6)
+        else:
+            windspeed = round(weather['wind']['speed'] * 2.2369)
         if "problem" not in weather:
-            print weather
-            if self.configuration['configuration']['temperature'] == "celsius":
-                temptext = _("temp_celsius")
-                temp = (((weather['main']['temp'] - 32) * 5) / 9)
-            else:
-                temptext = _("temp_fahrenheit")
-                temp = weather['main']['temp']
-            print temptext
             body = ", ".join([
                 _('weather in city') % city,
                 _('climat') % weather['weather'][0]['description'],
-                temptext % str(temp),
-                _('humidity') % str(weather['main']['humidity']),
-                _('wind speed') % str(weather['wind']['speed'])
+                _("temperature") % round(weather['main']['temp']),
+                _('humidity') % round(weather['main']['humidity']),
+                _('wind speed') % windspeed
             ])
         else:
             body = weather['problem']

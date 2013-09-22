@@ -15,11 +15,8 @@ msgstr ""
 msgid "problem contacting server"
 msgstr "There was a problem contacting the server"
 
-msgid "temp_celsius"
-msgstr "The temperature is %s degrees celsius"
-
-msgid "temp_fahrenheit"
-msgstr "The temperature is %s degrees fahrenheit"
+msgid "temperature"
+msgstr "The temperature is %i degrees"
 
 msgid "weather in city"
 msgstr "Here the weather in %s"
@@ -28,7 +25,7 @@ msgid "climat"
 msgstr "%s"
 
 msgid "humidity"
-msgstr "The humidity is %s"
+msgstr "The humidity is %d%%"
 
 msgid "wind speed"
-msgstr "The speed of the wind is %s"
+msgstr "The speed of the wind is %i miles per hour"
