@@ -1,11 +1,13 @@
 {
     "name": "Meteo",
-    "version": "1.2.5",
+    "version": "1.0.0",
     "author": "Julien Syx",
     "description": [
         {"lang": "fr", "description": "Ce plugin permet de donner la météo"},
         {"lang": "en", "description": "This plugin give the weather for a city"}
     ],
+    "pypi-url": "https://pypi.python.org/pypi/lisa-plugin-Meteo",
+    "github-url": "https://raw.githubusercontent.com/Seraf/LISA-PLUGINS-Meteo/master/lisa/plugins/Meteo/meteo.json",
     "enabled": 1,
     "lang": ["fr","en"],
     "configuration": {
@@ -18,7 +20,7 @@
             }
         },
         "widgets": {
-            "getWeather": "Meteo.web.views.weather"
+            "getWeather": "lisa.plugins.Meteo.web.views.weather"
         }
     }
 }

@@ -1,9 +1,7 @@
 import json, os, sys
 from twisted.trial import unittest
 from twisted.test import proto_helpers
-sys.path.append(os.path.normpath(os.path.join(os.path.abspath("../../../"))))
-import libs
-from lisa import configuration
+from lisa.server.service import configuration
 """
 class ChatTestCase(unittest.TestCase):
     def setUp(self):
